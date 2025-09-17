@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Мини-сайт — Страховые продукты</title>
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --accent:#06b6d4; --muted:#94a3b8; --glass: rgba(255,255,255,0.03);
+      --radius:14px; --maxw:1100px;
+      --gap:18px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:linear-gradient(180deg,#071021 0%,#0a1630 100%); color:#e6eef6; -webkit-font-smoothing:antialiased;
+      padding:36px; display:flex; justify-content:center; align-items:flex-start;
+    }
+    .wrap{width:100%; max-width:var(--maxw)}
+
+    header{display:flex;align-items:center;gap:18px;margin-bottom:20px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700;color:#04202a}
+    h1{margin:0;font-size:20px}
+    p.lead{margin:0;color:var(--muted);font-size:13px}
+
+    .controls{margin-left:auto;display:flex;gap:8px;align-items:center}
+    .search{padding:10px 12px;background:var(--glass);border-radius:10px;border:1px solid rgba(255,255,255,0.03);width:290px;color:var(--muted)}
+    .btn{background:linear-gradient(90deg,var(--accent),#7c3aed);border:none;color:#021216;padding:9px 12px;border-radius:10px;cursor:pointer;font-weight:600}
+
+    main{display:grid;grid-template-columns:1fr 360px;gap:20px}
+
+    .panel{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.04); padding:18px; border-radius:var(--radius)}
+    .panel h2{margin:0 0 10px 0;font-size:16px}
+
+    .cards{display:grid;grid-template-columns:repeat(auto-fill, minmax(260px,1fr));gap:var(--gap)}
+    .card{background:rgba(255,255,255,0.02); padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);display:flex;flex-direction:column;gap:8px}
+    .card h3{margin:0;font-size:15px}
+    .card small{color:var(--muted)}
+    .links{margin-top:8px;display:flex;flex-direction:column;gap:6px}
+    .link{display:flex;justify-content:space-between;align-items:center;padding:8px;background:rgba(255,255,255,0.01);border-radius:8px;font-size:13px}
+    .link a{color:inherit;text-decoration:none;flex:1}
+    .link .actions{display:flex;gap:6px}
+    .copy{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:6px;border-radius:8px;cursor:pointer}
+
+    /* sidebar */
+    .sidebar .box{margin-bottom:12px}
+    .note{font-size:13px;color:var(--muted);line-height:1.4}
+
+    footer{margin-top:18px;color:var(--muted);font-size:13px;text-align:center}
+
+    @media (max-width:900px){
+      main{grid-template-columns:1fr}
+      .controls{width:100%;margin-top:10px}
+      .search{width:100%}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">AIC</div>
+        <div>
+          <h1>Мини‑сайт — Страховые продукты</h1>
+          <p class="lead">Список обязательных и добровольных продуктов. Нажмите «Копировать» чтобы сохранить ссылку.</p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <input id="search" class="search" placeholder="Поиск продукта (например: ОСАГО)" />
+        <button id="reset" class="btn">Сброс</button>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <div class="panel">
+          <h2>Обязательные</h2>
+          <div class="cards" id="list">
+
+            <div class="card" data-tags="осагО ОСАГО 1001">
+              <h3>ОСАГО</h3>
+              <small>order-1001 — обязательный</small>
+              <div class="links">
+                <div class="link"><a href="https://online.aic.uz/apex/r/ins/epolis_beeline/order-1001?p2000_pturi=3" target="_blank">Открыть в новой вкладке</a>
+                  <div class="actions"><button class="copy" data-url="https://online.aic.uz/apex/r/ins/epolis_beeline/order-1001?p2000_pturi=3">Копировать</button></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card" data-tags="осгор ОСГОР 4002">
+              <h3>ОСГОР</h3>
+              <small>order-4002 — обязательный</small>
+              <div class="links">
+                <div class="link"><a href="https://online.aic.uz/apex/r/ins/epolis_beeline/order-4002?p2000_pturi=4002" target="_blank">Открыть в новой вкладке</a>
+                  <div class="actions"><button class="copy" data-url="https://online.aic.uz/apex/r/ins/epolis_beeline/order-4002?p2000_pturi=4002">Копировать</button></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card" data-tags="осгоп ОСГОП 4003">
+              <h3>ОСГОП</h3>
+              <small>order-4003 — обязательный</small>
+              <div class="links">
+                <div class="link"><a href="https://online.aic.uz/apex/r/ins/epolis_beeline/order-4003?p2000_pturi=4003" target="_blank">Открыть в новой вкладке</a>
+                  <div class="actions"><button class="copy" data-url="https://online.aic.uz/apex/r/ins/epolis_beeline/order-4003?p2000_pturi=4003">Копировать</button></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Добровольные отдельно сгруппированы ниже -->
+
+            <div class="card" data-tags="несчастных несчастный 29">
+              <h3>Страхование от несчастных случаев (24/7)</h3>
+              <small>p2000_pturi=29</small>
+              <div class="links">
+                <div class="link"><a href="https://online.aic.uz/apex/r/ins/epolis_beeline/order?p2000_pturi=29" target="_blank">Открыть</a>
+                  <div class="actions"><button class="copy" data-url="https://online.aic.uz/apex/r/ins/epolis_beeline/order?p2000_pturi=29">Копировать</button></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card" data-tags="каско газ 103">
+              <h3>КАСКО‑ГАЗ (газобаллонного оборудования)</h3>
+              <small>program=103</small>
+              <div class="links">
+                <div class="link"><a href="https://online.aic.uz/apex/r/ins/epolis_beeline/order?p2000_pturi=103&p2000_program_228_229_103=103" target="_blank">Открыть</a>
+                  <div class="actions"><button class="copy" data-url="https://online.aic.uz/apex/r/ins/epolis_beeline/order?p2000_pturi=103&p2000_program_228_229_103=103">Копировать</button></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card" data-tags="имущество 160">
+              <h3>Комбинированное страхование имущества (физ. лица)</h3>
+              <small>order-8931 p2000_pturi=160</small>
+              <div class="links">
+                <div class="link"><a href="https://online.aic.uz/apex/r/ins/epolis_beeline/order-8931?p2000_pturi=160" target="_blank">Открыть</a>
+                  <div class="actions"><button class="copy" data-url="https://online.aic.uz/apex/r/ins/epolis_beeline/order-8931?p2000_pturi=160">Копировать</button></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card" data-tags="инфекционные 190">
+              <h3>Несчастные случаи и инфекционные заболевания</h3>
+              <small>p2000_pturi=190</small>
+              <div class="links">
+                <div class="link"><a href="https://online.aic.uz/apex/r/ins/epolis_beeline/order?p2000_pturi=190" target="_blank">Открыть</a>
+                  <div class="actions"><button class="copy" data-url="https://online.aic.uz/apex/r/ins/epolis_beeline/order?p2000_pturi=190">Копировать</button></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card" data-tags="пассажиры 227">
+              <h3>Страхование пассажиров</h3>
+              <small>p2000_pturi=227</small>
+              <div class="links">
+                <div class="link"><a href="https://online.aic.uz/apex/r/ins/epolis_beeline/order?p2000_pturi=227" target="_blank">Открыть</a>
+                  <div class="actions"><button class="copy" data-url="https://online.aic.uz/apex/r/ins/epolis_beeline/order?p2000_pturi=227">Копировать</button></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card" data-tags="миникаско 228">
+              <h3>МИНИКАСКО</h3>
+              <small>p2000_program_228_229_103=228</small>
+              <div class="links">
+                <div class="link"><a href="https://online.aic.uz/apex/r/ins/epolis_beeline/order?p2000_pturi=228&p2000_program_228_229_103=228" target="_blank">Открыть</a>
+                  <div class="actions"><button class="copy" data-url="https://online.aic.uz/apex/r/ins/epolis_beeline/order?p2000_pturi=228&p2000_program_228_229_103=228">Копировать</button></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card" data-tags="avtoroad 229">
+              <h3>AVTOROAD</h3>
+              <small>p2000_program_228_229_103=229</small>
+              <div class="links">
+                <div class="link"><a href="https://online.aic.uz/apex/r/ins/epolis_beeline/order?p2000_pturi=229&p2000_program_228_229_103=229" target="_blank">Открыть</a>
+                  <div class="actions"><button class="copy" data-url="https://online.aic.uz/apex/r/ins/epolis_beeline/order?p2000_pturi=229&p2000_program_228_229_103=229">Копировать</button></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card" data-tags="туристы 230">
+              <h3>Страхование туристов (за рубеж)</h3>
+              <small>order-0206 p2000_pturi=230</small>
+              <div class="links">
+                <div class="link"><a href="https://online.aic.uz/apex/r/ins/epolis_beeline/order-0206?p2000_pturi=230" target="_blank">Открыть</a>
+                  <div class="actions"><button class="copy" data-url="https://online.aic.uz/apex/r/ins/epolis_beeline/order-0206?p2000_pturi=230">Копировать</button></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card" data-tags="документы 239">
+              <h3>Утрата личных документов (возмещение расходов)</h3>
+              <small>order-1619 p2000_pturi=239</small>
+              <div class="links">
+                <div class="link"><a href="https://online.aic.uz/apex/r/ins/epolis_beeline/order-1619?p2000_pturi=239" target="_blank">Открыть</a>
+                  <div class="actions"><button class="copy" data-url="https://online.aic.uz/apex/r/ins/epolis_beeline/order-1619?p2000_pturi=239">Копировать</button></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card" data-tags="спорт 300">
+              <h3>Страхование спортсменов от несчастных случаев</h3>
+              <small>p2000_pturi=300</small>
+              <div class="links">
+                <div class="link"><a href="https://online.aic.uz/apex/r/ins/epolis_beeline/order?p2000_pturi=300" target="_blank">Открыть</a>
+                  <div class="actions"><button class="copy" data-url="https://online.aic.uz/apex/r/ins/epolis_beeline/order?p2000_pturi=300">Копировать</button></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card" data-tags="непредвиденные 320">
+              <h3>Непредвиденные расходы владельцев ТС</h3>
+              <small>p2000_program_228_229_103=320</small>
+              <div class="links">
+                <div class="link"><a href="https://online.aic.uz/apex/r/ins/epolis_beeline/order?p2000_pturi=320&p2000_program_228_229_103=320" target="_blank">Открыть</a>
+                  <div class="actions"><button class="copy" data-url="https://online.aic.uz/apex/r/ins/epolis_beeline/order?p2000_pturi=320&p2000_program_228_229_103=320">Копировать</button></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card" data-tags="комплекс 392">
+              <h3>Комплексное страхование ТС и рисков</h3>
+              <small>p2000_pturi=392</small>
+              <div class="links">
+                <div class="link"><a href="https://online.aic.uz/apex/r/ins/epolis_beeline/order?p2000_pturi=392" target="_blank">Открыть</a>
+                  <div class="actions"><button class="copy" data-url="https://online.aic.uz/apex/r/ins/epolis_beeline/order?p2000_pturi=392">Копировать</button></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card" data-tags="коммерческая 393">
+              <h3>Страхование коммерческой недвижимости</h3>
+              <small>p2000_pturi=393</small>
+              <div class="links">
+                <div class="link"><a href="https://online.aic.uz/apex/r/ins/epolis_beeline/order?p2000_pturi=393" target="_blank">Открыть</a>
+                  <div class="actions"><button class="copy" data-url="https://online.aic.uz/apex/r/ins/epolis_beeline/order?p2000_pturi=393">Копировать</button></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card" data-tags="финансовые 394">
+              <h3>Страхование финансовых рисков вкладчиков</h3>
+              <small>p2000_pturi=394</small>
+              <div class="links">
+                <div class="link"><a href="https://online.aic.uz/apex/r/ins/epolis_beeline/order?p2000_pturi=394" target="_blank">Открыть</a>
+                  <div class="actions"><button class="copy" data-url="https://online.aic.uz/apex/r/ins/epolis_beeline/order?p2000_pturi=394">Копировать</button></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card" data-tags="въезд 395">
+              <h3>Путешественники, въезжающие в Узбекистан</h3>
+              <small>order-0204-1 p2000_pturi=395</small>
+              <div class="links">
+                <div class="link"><a href="https://online.aic.uz/apex/r/ins/epolis_beeline/order-0204-1?p2000_pturi=395" target="_blank">Открыть</a>
+                  <div class="actions"><button class="copy" data-url="https://online.aic.uz/apex/r/ins/epolis_beeline/order-0204-1?p2000_pturi=395">Копировать</button></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <footer>Сохраните этот файл как <code>index.html</code> и откройте в браузере. Работает офлайн.</footer>
+      </section>
+
+      <aside class="sidebar">
+        <div class="panel box">
+          <h2>Инструменты</h2>
+          <div class="note">Наведите курсор и нажмите «Копировать» — ссылка скопируется в буфер обмена. Поиск фильтрует карточки по названию и тегам.</div>
+        </div>
+
+        <div class="panel box">
+          <h2>Подсказки</h2>
+          <ul style="margin:0 0 0 18px;color:var(--muted);font-size:13px">
+            <li>Сохраните как <code>index.html</code>.</li>
+            <li>Откройте двойным кликом или в VSCode — Live Server.</li>
+            <li>Нужны правки? Скажи, что изменить (цвета, шрифты, добавить логотип).</li>
+          </ul>
+        </div>
+
+        <div class="panel box">
+          <h2>Контроль</h2>
+          <div class="note">Кнопка «Сброс» очищает поиск. Ссылки открываются в новой вкладке.</div>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <script>
+    // copy buttons
+    document.querySelectorAll('.copy').forEach(btn=>{
+      btn.addEventListener('click', async e=>{
+        const u = btn.dataset.url;
+        try{
+          await navigator.clipboard.writeText(u);
+          btn.textContent = 'Скопировано';
+          setTimeout(()=>btn.textContent='Копировать',1200);
+        }catch(err){
+          alert('Не удалось скопировать. Скопируйте вручную: ' + u);
+        }
+      })
+    })
+
+    // search
+    const search = document.getElementById('search');
+    const list = document.getElementById('list');
+    search.addEventListener('input', ()=>{
+      const q = search.value.trim().toLowerCase();
+      Array.from(list.children).forEach(card=>{
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const tags = (card.dataset.tags||'').toLowerCase();
+        card.style.display = (title.includes(q) || tags.includes(q) || q==='') ? '' : 'none';
+      })
+    })
+
+    // reset
+    document.getElementById('reset').addEventListener('click', ()=>{ search.value=''; search.dispatchEvent(new Event('input')); });
+  </script>
+</body>
+</html>
