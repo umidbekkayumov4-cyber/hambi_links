@@ -2,159 +2,153 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Ссылки на продукты</title>
+  <title>Страховые продукты</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #f9f9f9, #e3f2fd);
       margin: 0;
-      padding: 40px;
+      background: #f9f9f9;
+      color: #333;
     }
 
-    h1 {
-      text-align: center;
-      color: #0d47a1;
-      margin-bottom: 40px;
-    }
-
-    .section {
-      max-width: 800px;
-      margin: 0 auto 50px auto;
-      padding: 20px;
-      background: #ffffff;
-      border-radius: 16px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-    }
-
-    .section h2 {
-      text-align: center;
-      color: #1565c0;
-      margin-bottom: 20px;
-    }
-
-    .product {
+    header {
+      background: #fff;
+      padding: 10px 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 20px;
-      margin-bottom: 12px;
-      border-radius: 12px;
-      background: #f1f8ff;
-      transition: transform 0.2s ease;
+      justify-content: center;
+      gap: 20px;
     }
 
-    .product:hover {
-      transform: translateY(-3px);
-      background: #e3f2fd;
-    }
-
-    .product span {
+    .tab {
+      border: none;
+      background: none;
       font-size: 16px;
-      font-weight: 600;
-      color: #0d47a1;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 10px 20px;
+      border-bottom: 3px solid transparent;
+      transition: 0.3s;
+    }
+
+    .tab.active {
+      color: #1565c0;
+      border-bottom: 3px solid #1565c0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .card h3 {
+      margin: 0 0 15px;
+      color: #1565c0;
+      font-size: 18px;
     }
 
     .btn {
-      background: #1976d2;
-      color: white;
+      background: #c6ff00;
+      color: #000;
+      padding: 10px 16px;
+      border-radius: 6px;
       text-decoration: none;
-      padding: 8px 16px;
-      border-radius: 8px;
-      font-size: 14px;
       font-weight: bold;
-      transition: background 0.3s ease;
+      transition: background 0.3s;
     }
 
     .btn:hover {
-      background: #0d47a1;
+      background: #aee400;
     }
+
+    .hidden { display: none; }
   </style>
 </head>
 <body>
-  <h1>Страховые продукты</h1>
+
+  <!-- Навигация -->
+  <header>
+    <button class="tab active" onclick="showSection('required')">Обязательные</button>
+    <button class="tab" onclick="showSection('voluntary')">Добровольные</button>
+  </header>
 
   <!-- Обязательные -->
-  <div class="section">
-    <h2>Обязательные</h2>
-    <div class="product">
-      <span>ОСАГО</span>
-      <a class="btn" href="https://online.aic.uz/apex/r/ins/epolis_beeline/order-1001?p2000_pturi=3" target="_blank">Ссылка</a>
+  <section id="required" class="grid">
+    <div class="card">
+      <h3>ОСАГО</h3>
+      <a class="btn" href="https://online.aic.uz/apex/r/ins/epolis_beeline/order-1001?p2000_pturi=3" target="_blank">Перейти</a>
     </div>
-    <div class="product">
-      <span>ОСГОР</span>
-      <a class="btn" href="https://online.aic.uz/apex/r/ins/epolis_beeline/order-4002?p2000_pturi=4002" target="_blank">Ссылка</a>
+    <div class="card">
+      <h3>ОСГОР</h3>
+      <a class="btn" href="https://online.aic.uz/apex/r/ins/epolis_beeline/order-4002?p2000_pturi=4002" target="_blank">Перейти</a>
     </div>
-    <div class="product">
-      <span>ОСГОП</span>
-      <a class="btn" href="https://online.aic.uz/apex/r/ins/epolis_beeline/order-4003?p2000_pturi=4003" target="_blank">Ссылка</a>
+    <div class="card">
+      <h3>ОСГОП</h3>
+      <a class="btn" href="https://online.aic.uz/apex/r/ins/epolis_beeline/order-4003?p2000_pturi=4003" target="_blank">Перейти</a>
     </div>
-  </div>
+  </section>
 
   <!-- Добровольные -->
-  <div class="section">
-    <h2>Добровольные</h2>
-    <div class="product">
-      <span>Несчастные случаи (24/7)</span>
-      <a class="btn" href="https://online.aic.uz/apex/r/ins/epolis_beeline/order?p2000_pturi=29" target="_blank">Ссылка</a>
+  <section id="voluntary" class="grid hidden">
+    <div class="card">
+      <h3>Несчастные случаи (24/7)</h3>
+      <a class="btn" href="https://online.aic.uz/apex/r/ins/epolis_beeline/order?p2000_pturi=29" target="_blank">Перейти</a>
     </div>
-    <div class="product">
-      <span>КАСКО-ГАЗ</span>
-      <a class="btn" href="https://online.aic.uz/apex/r/ins/epolis_beeline/order?p2000_pturi=103&p2000_program_228_229_103=103" target="_blank">Ссылка</a>
+    <div class="card">
+      <h3>КАСКО-ГАЗ</h3>
+      <a class="btn" href="https://online.aic.uz/apex/r/ins/epolis_beeline/order?p2000_pturi=103&p2000_program_228_229_103=103" target="_blank">Перейти</a>
     </div>
-    <div class="product">
-      <span>Комбинированное страхование имущества</span>
-      <a class="btn" href="https://online.aic.uz/apex/r/ins/epolis_beeline/order-8931?p2000_pturi=160" target="_blank">Ссылка</a>
+    <div class="card">
+      <h3>Комбинированное страхование имущества</h3>
+      <a class="btn" href="https://online.aic.uz/apex/r/ins/epolis_beeline/order-8931?p2000_pturi=160" target="_blank">Перейти</a>
     </div>
-    <div class="product">
-      <span>Несчастные случаи и инфекции</span>
-      <a class="btn" href="https://online.aic.uz/apex/r/ins/epolis_beeline/order?p2000_pturi=190" target="_blank">Ссылка</a>
+    <div class="card">
+      <h3>Страхование путешественников</h3>
+      <a class="btn" href="https://online.aic.uz/apex/r/ins/epolis_beeline/order-32?p2000_pturi=32" target="_blank">Перейти</a>
     </div>
-    <div class="product">
-      <span>Страхование пассажиров</span>
-      <a class="btn" href="https://online.aic.uz/apex/r/ins/epolis_beeline/order?p2000_pturi=227" target="_blank">Ссылка</a>
+    <div class="card">
+      <h3>КАСКО-мини</h3>
+      <a class="btn" href="https://online.aic.uz/apex/r/ins/epolis_beeline/order-31?p2000_pturi=31" target="_blank">Перейти</a>
     </div>
-    <div class="product">
-      <span>МИНИКАСКО</span>
-      <a class="btn" href="https://online.aic.uz/apex/r/ins/epolis_beeline/order?p2000_pturi=228&p2000_program_228_229_103=228" target="_blank">Ссылка</a>
+    <div class="card">
+      <h3>Страхование имущества</h3>
+      <a class="btn" href="https://online.aic.uz/apex/r/ins/epolis_beeline/order-160?p2000_pturi=160" target="_blank">Перейти</a>
     </div>
-    <div class="product">
-      <span>AVTOROAD</span>
-      <a class="btn" href="https://online.aic.uz/apex/r/ins/epolis_beeline/order?p2000_pturi=229&p2000_program_228_229_103=229" target="_blank">Ссылка</a>
+    <div class="card">
+      <h3>КАСКО полный</h3>
+      <a class="btn" href="https://online.aic.uz/apex/r/ins/epolis_beeline/order-30?p2000_pturi=30" target="_blank">Перейти</a>
     </div>
-    <div class="product">
-      <span>Туристы за рубеж</span>
-      <a class="btn" href="https://online.aic.uz/apex/r/ins/epolis_beeline/order-0206?p2000_pturi=230" target="_blank">Ссылка</a>
+    <div class="card">
+      <h3>Ипотечное страхование</h3>
+      <a class="btn" href="https://online.aic.uz/apex/r/ins/epolis_beeline/order-8931?p2000_pturi=8931" target="_blank">Перейти</a>
     </div>
-    <div class="product">
-      <span>Утрата документов</span>
-      <a class="btn" href="https://online.aic.uz/apex/r/ins/epolis_beeline/order-1619?p2000_pturi=239" target="_blank">Ссылка</a>
-    </div>
-    <div class="product">
-      <span>Страхование спортсменов</span>
-      <a class="btn" href="https://online.aic.uz/apex/r/ins/epolis_beeline/order?p2000_pturi=300" target="_blank">Ссылка</a>
-    </div>
-    <div class="product">
-      <span>Непредвиденные расходы владельцев авто</span>
-      <a class="btn" href="https://online.aic.uz/apex/r/ins/epolis_beeline/order?p2000_pturi=320&p2000_program_228_229_103=320" target="_blank">Ссылка</a>
-    </div>
-    <div class="product">
-      <span>Комплексное страхование ТС</span>
-      <a class="btn" href="https://online.aic.uz/apex/r/ins/epolis_beeline/order?p2000_pturi=392" target="_blank">Ссылка</a>
-    </div>
-    <div class="product">
-      <span>Коммерческая недвижимость</span>
-      <a class="btn" href="https://online.aic.uz/apex/r/ins/epolis_beeline/order?p2000_pturi=393" target="_blank">Ссылка</a>
-    </div>
-    <div class="product">
-      <span>Финансовые риски вкладчиков</span>
-      <a class="btn" href="https://online.aic.uz/apex/r/ins/epolis_beeline/order?p2000_pturi=394" target="_blank">Ссылка</a>
-    </div>
-    <div class="product">
-      <span>Путешественники в Узбекистан</span>
-      <a class="btn" href="https://online.aic.uz/apex/r/ins/epolis_beeline/order-0204-1?p2000_pturi=395" target="_blank">Ссылка</a>
-    </div>
-  </div>
+  </section>
+
+  <script>
+    function showSection(id) {
+      document.getElementById('required').classList.add('hidden');
+      document.getElementById('voluntary').classList.add('hidden');
+      document.getElementById(id).classList.remove('hidden');
+
+      document.querySelectorAll('.tab').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+  </script>
 
 </body>
 </html>
-
